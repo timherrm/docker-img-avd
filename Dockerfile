@@ -31,4 +31,7 @@ RUN node --version && \
     git --version && \
     ansible --version
 
+# Set working directory
+WORKDIR /workspaces/arista-fabric
+
 CMD ["bash"]
