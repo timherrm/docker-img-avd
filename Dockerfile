@@ -20,9 +20,9 @@ RUN mkdir -p /workspaces/arista-fabric && chown -R ciuser:ciuser /workspaces
 USER ciuser
 
 # Copy requirements files
-COPY galaxy-requirements.yml .
+COPY galaxy.yml .
 
 # Install Ansible collections
-RUN ansible-galaxy collection install -r galaxy-requirements.yml
+RUN ansible-galaxy collection install -r galaxy.yml
 
 CMD ["bash"]

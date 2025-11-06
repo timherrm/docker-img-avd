@@ -6,7 +6,7 @@ This repository contains:
 
 - `Dockerfile` - builds a container from `node:<version>-slim` and installs Python packages and Ansible collections
 - `pip-requirements.txt` - specifies Python package versions
-- `galaxy-requirements.yml` - specifies Ansible collections to install
+- `galaxy.yml` - specifies Ansible collections to install
 - `.github/workflows/docker-build.yml` - GitHub Actions workflow that builds multi-architecture images and pushes to GitHub Container Registry (ghcr.io)
 
 ## Image name
@@ -45,9 +45,9 @@ Python packages and their versions are managed in `pip-requirements.txt`. To add
 
 ### Ansible Collections
 
-Ansible collections are managed in `galaxy-requirements.yml`. To add or update collections:
+Ansible collections are managed in `galaxy.yml`. To add or update collections:
 
-1. Edit `galaxy-requirements.yml`
+1. Edit `galaxy.yml`
 2. Push to `main`
 3. The workflow will build a new image with updated collections
 
