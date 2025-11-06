@@ -64,7 +64,7 @@ jobs:
         id: desc
         run: |
           # Build a reusable description matching the Dockerfile LABEL
-          DESC="A docker image based on the AVD universal image, AVD collection version ${{ steps.avd-version.outputs.avd_version }}, including Node.js"
+          DESC="An docker image based on node, containing python, ansible, pyavd and the ansible-galaxy arista.avd collection."
           echo "description=$DESC" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
