@@ -13,14 +13,14 @@ COPY galaxy-requirements.yml .
 # Install Python packages
 RUN pip3 install -r pip-requirements.txt --break-system-packages
 
-# Install Ansible collections
-RUN ansible-galaxy collection install -r galaxy-requirements.yml
-
 # Prepare work directory
 WORKDIR /workspaces/arista-fabric
 RUN mkdir -p /workspaces/arista-fabric && chown -R ciuser:ciuser /workspaces
 
 # Switch to non-root user
 USER ciuser
+
+# Install Ansible collections
+RUN ansible-galaxy collection install -r galaxy-requirements.yml
 
 CMD ["bash"]
