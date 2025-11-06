@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'Dockerfile'
-      - 'galaxy.yml'
+      - 'requirements.yml'
       - 'pip-requirements.txt'
       - '.github/workflows/docker-build.yml'
   workflow_dispatch:
@@ -26,11 +26,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Extract AVD version from galaxy.yml
+      - name: Extract AVD version from requirements.yml
         id: avd-version
         run: |
-          # get the version value from galaxy.yml (first occurrence)
-          AVD_VERSION=$(grep -m1 "version:" galaxy.yml | sed 's/.*version:[[:space:]]*//' | tr -d '\r')
+          # get the version value from requirements.yml (first occurrence)
+          AVD_VERSION=$(grep -m1 "version:" requirements.yml | sed 's/.*version:[[:space:]]*//' | tr -d '\r')
           echo "avd_version=${AVD_VERSION}" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
