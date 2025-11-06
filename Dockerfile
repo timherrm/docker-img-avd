@@ -1,7 +1,7 @@
 FROM node:25.0.0-slim
 
 # Image description
-ARG IMAGE_DESCRIPTION="A docker image based on the AVD universal image, but including Node.js"
+ARG IMAGE_DESCRIPTION="An docker image based on node, containing python, ansible, pyavd and the ansible-galaxy arista.avd collection."
 
 # Install system dependencies and Python
 RUN apt-get update && apt-get install -y \
