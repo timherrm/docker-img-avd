@@ -1,4 +1,4 @@
-FROM node:25.0.0-slim
+FROM node:25.1.0-slim
 
 # Install system dependencies and Python
 RUN apt-get update && apt-get install -y python3 python3-pip git && rm -rf /var/lib/apt/lists/*
