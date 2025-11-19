@@ -10,6 +10,8 @@ on:
       - 'pip-requirements.txt'
       - '.github/workflows/docker-build.yml'
   workflow_dispatch:
+  schedule:
+    - cron: "37 4 * * SUN" # At 04:37 on Sunday
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
