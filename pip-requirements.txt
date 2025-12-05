@@ -1,4 +1,4 @@
 pyavd[ansible-collection]==5.2.3
 ansible-core==2.18.10
-ansible-lint==25.11.1
+ansible-lint==25.12.0
 passlib==1.7.4
