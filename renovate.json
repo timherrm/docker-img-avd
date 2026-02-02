@@ -7,9 +7,32 @@
   "requiredStatusChecks": null,
   "packageRules": [
     {
+      "description": "Docker base image: node (allow minor + patch)",
+      "matchManagers": ["dockerfile"],
+      "matchPackageNames": ["node"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "stabilityDays": 3
+    },
+    {
+      "description": "pip pyavd package (patch only)",
+      "matchManagers": ["pip_requirements", "pip_setup"],
+      "matchPackageNames": ["pyavd"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "stabilityDays": 3
+    },
+    {
+      "description": "Ansible collection arista.avd (patch only)",
+      "matchManagers": ["ansible-galaxy"],
+      "matchPackageNames": ["arista.avd"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "stabilityDays": 3
+    },
+    {
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "automerge": false
     }
   ]
 }
