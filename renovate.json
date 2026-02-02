@@ -1,34 +1,56 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": [
+    "config:recommended"
+  ],
   "automerge": false,
   "automergeType": "pr",
   "platformAutomerge": true,
-  "requiredStatusChecks": null,
+  "ignoreTests": true,
   "packageRules": [
     {
       "description": "Docker base image: node (allow minor + patch)",
-      "matchManagers": ["dockerfile"],
-      "matchPackageNames": ["node"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchPackageNames": [
+        "node"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
-      "stabilityDays": 3
+      "minimumReleaseAge": "3 days"
     },
     {
       "description": "pip pyavd package (patch only)",
-      "matchManagers": ["pip_requirements", "pip_setup"],
-      "matchPackageNames": ["pyavd"],
-      "matchUpdateTypes": ["patch"],
+      "matchManagers": [
+        "pip_requirements",
+        "pip_setup"
+      ],
+      "matchPackageNames": [
+        "pyavd"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "automerge": true,
-      "stabilityDays": 3
+      "minimumReleaseAge": "3 days"
     },
     {
       "description": "Ansible collection arista.avd (patch only)",
-      "matchManagers": ["ansible-galaxy"],
-      "matchPackageNames": ["arista.avd"],
-      "matchUpdateTypes": ["patch"],
+      "matchManagers": [
+        "ansible-galaxy"
+      ],
+      "matchPackageNames": [
+        "arista.avd"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "automerge": true,
-      "stabilityDays": 3
+      "minimumReleaseAge": "3 days"
     }
   ]
 }
