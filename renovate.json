@@ -29,10 +29,6 @@
       "matchUpdateTypes": ["patch"],
       "automerge": true,
       "stabilityDays": 3
-    },
-    {
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "automerge": false
     }
   ]
 }
