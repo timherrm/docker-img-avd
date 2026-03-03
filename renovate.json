@@ -51,6 +51,18 @@
       ],
       "automerge": true,
       "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "pip ansible-lint package (all updates)",
+      "matchManagers": [
+        "pip_requirements",
+        "pip_setup"
+      ],
+      "matchPackageNames": [
+        "ansible-lint"
+      ],
+      "automerge": true,
+      "minimumReleaseAge": "3 days"
     }
   ]
 }
