@@ -1,4 +1,4 @@
-FROM node:25.8.1-trixie-slim
+FROM node:25.8.2-trixie-slim
 
 # Install system dependencies and Python
 RUN apt-get update && \
