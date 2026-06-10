@@ -2,7 +2,7 @@ FROM node:25.9.0-trixie-slim
 
 # Install system dependencies and Python
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip git jq vim && \
+    apt-get install -y python3 python3-pip git jq vim bash-completion && \
     rm -rf /var/lib/apt/lists/*
 
 # Create non-root user with a stable UID/GID (CI-safe)
