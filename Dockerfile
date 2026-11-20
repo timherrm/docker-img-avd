@@ -5,9 +5,11 @@ RUN apt-get update && \
     apt-get install -y python3 python3-pip git jq vim bash-completion && \
     rm -rf /var/lib/apt/lists/*
 
-# Create non-root user with a stable UID/GID (CI-safe)
-RUN groupadd -g 1001 ciuser && \
-    useradd -m -u 1001 -g 1001 ciuser
+# Replace default node user with ciuser (UID/GID 1000)
+RUN userdel -r node && \
+    groupdel node && \
+    groupadd -g 1000 ciuser && \
+    useradd -m -u 1000 -g 1000 ciuser
 
 # Copy requirements files
 COPY pip-requirements.txt .
