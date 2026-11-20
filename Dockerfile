@@ -18,7 +18,7 @@ RUN pip3 install -r pip-requirements.txt --break-system-packages
 # Prepare work directory
 WORKDIR /workspaces/arista-fabric
 RUN mkdir -p /workspaces/arista-fabric && \
-    chown -R ciuser:ciuser /workspaces
+    chown -R 1001:1001 /workspaces
 
 # Enable passwordless root access
 # RUN passwd -d root
