@@ -6,8 +6,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Replace default node user with ciuser (UID/GID 1000)
-RUN userdel -r node && \
-    groupdel node && \
+RUN userdel node 2>/dev/null || true; \
+    groupdel node 2>/dev/null || true; \
     groupadd -g 1000 ciuser && \
     useradd -m -u 1000 -g 1000 ciuser
 
